@@ -13,5 +13,10 @@ func main() {
 		log.Fatal("unable to get options %v", err)
 	}
 
-	fmt.Printf("opts: %+v", opts)
+	config, err := cli.NewConfig(opts)
+	if err != nil {
+		log.Fatal("unable to get config %v", err)
+	}
+
+	fmt.Printf("opts: %+v", config)
 }
