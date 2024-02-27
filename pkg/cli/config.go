@@ -34,12 +34,12 @@ func getConfig(opts *Opts) (string, error) {
 		return opts.Config, nil
 	}
 
-	config, err := os.UserConfigDir()
+	config, err := os.UserHomeDir()
 	if err != nil {
 		return "", nil
 	}
 
-	return path.Join(config, "projector", "projector.json"), nil
+	return path.Join(config, ".config", "projector", "projector.json"), nil
 }
 
 func getOperation(opts *Opts) Operation {
